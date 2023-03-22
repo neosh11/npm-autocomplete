@@ -1,6 +1,6 @@
 {
   "name": "@neosh11/autocomplete-search",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "This package enables you to perform prefix searches with exceptional speed.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
