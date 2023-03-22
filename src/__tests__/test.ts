@@ -1,4 +1,4 @@
-import { AutoCompleteSearch } from '../index';
+import { AutoCompleteSearch, String2ObjectAutoCompleteSearch } from '../index';
 
 test('Test insert and find', () => {
   // create a new instance of the AutoCompleteSearch class
@@ -73,4 +73,76 @@ test('Test insert and big fat find', () => {
     .sort();
 
   expect(words1).toEqual(words2);
+});
+
+test('String2ObjectAutoCompleteSearch', () => {
+  // create a new instance of the AutoCompleteSearch class
+  const search = new String2ObjectAutoCompleteSearch({
+    ignoreCase: true,
+    objectIdProperty: 'id',
+    tokenizer: ' ',
+  });
+
+  const users = [
+    {
+      name: 'John Doe',
+      id: '1',
+    },
+    {
+      name: 'John Doe',
+      id: '2',
+    },
+    {
+      name: 'Pops',
+      id: '3',
+    },
+    {
+      name: 'James',
+      id: '4',
+    },
+  ];
+
+  const events = [
+    {
+      ff: 'Papi Del',
+      id: 'e1',
+    },
+    {
+      ff: 'Paa Doe',
+      id: 'e2',
+    },
+    {
+      ff: 'Jeje',
+      id: 'e3',
+    },
+    {
+      ff: 'Joe',
+      id: 'e4',
+    },
+  ];
+
+  for (const user of users) {
+    search.insert(user.name, user);
+  }
+
+  for (const event of events) {
+    search.insert(event.ff, event);
+  }
+
+  const words = search.findObjects('Jo');
+  const words2 = search.findObjects('D');
+  const words3 = search.findObjects('pO');
+  const words4 = search.findObjects('j');
+  const words5 = search.findObjects('p');
+
+  expect(words.length).toEqual(3);
+  expect(words2.length).toEqual(4);
+  expect(words3).toEqual([{ name: 'Pops', id: '3' }]);
+  expect(words4.length).toEqual(5);
+  expect(words5.length).toEqual(3);
+
+  // clear the search
+  search.clear();
+  // expect the words to be an empty array
+  expect(search.findObjects('jo')).toEqual([]);
 });
