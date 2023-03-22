@@ -33,7 +33,7 @@ export class AutoCompleteSearch {
 
     if (word && id) {
       let node = this.root;
-      for (let char of word) {
+      for (const char of word) {
         // lowercase the character
         if (!node.children.has(char)) {
           node.children.set(char, createSearchNode());
@@ -91,7 +91,7 @@ export class AutoCompleteSearch {
         // add id to the set
         ids.add(id);
         count.value++;
-        if (count.value == maxCount) {
+        if (count.value === maxCount) {
           return;
         }
       }
