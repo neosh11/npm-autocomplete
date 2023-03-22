@@ -25,7 +25,7 @@ npm install @neosh11/autocomplete-search
 ### Importing the module
 
 ```ts
-import { AutoCompleteSearch } from ''@neosh11/autocomplete-search';
+import { AutoCompleteSearch } from '@neosh11/autocomplete-search';
 ```
 
 ### Initializing the AutoCompleteSearch
