@@ -19,10 +19,10 @@ jobs:
           node-version: '14'
 
       - name: Install dependencies
-       run: yarn install
+        run: yarn install
 
       - name: Run tests
-       run: yarn test
+        run: yarn test
 
       - name: Git configuration
         run: |
