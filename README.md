@@ -9,7 +9,7 @@ This TypeScript module provides a simple implementation of an auto-complete sear
 | `insert(word: string, id: string)`      	| `O(m)`, where m is the length of the word being inserted.       	|
 | `findWords(prefix: string, maxCount?: number)`   	| `O(k + n)`, where n is the number of nodes, k is the lenght of the prefix     	|
 
-```
+
 ## Usage
 
 ### install
