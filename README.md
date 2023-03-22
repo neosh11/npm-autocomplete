@@ -4,6 +4,12 @@
 
 This TypeScript module provides a simple implementation of an auto-complete search using a trie data structure. It supports searching for words with a given prefix and inserting words with associated IDs into the trie. The module also provides an option for case-insensitive search
 
+| Function		| Time 			|
+| ----------- 	| ----------- 	|
+| `insert(word: string, id: string)`      	| `O(m)`, where m is the length of the word being inserted.       	|
+| `findWords(prefix: string, maxCount?: number)`   	| `O(k + n)`, where n is the number of nodes, k is the lenght of the prefix     	|
+
+```
 ## Usage
 
 ### install
@@ -52,4 +58,4 @@ const results = autoCompleteSearch.findWords('exa', 5);
 ```
 
 By default, the maximum number of ids returned is 100
-This searches for words with the prefix "exa" and returns up to 5 associated IDs in an array. If no words match the prefix,
+This searches for words with the prefix "exa" and returns up to 5 associated IDs in an array.
