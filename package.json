@@ -1,7 +1,7 @@
 {
   "name": "@neosh11/autocomplete-search",
-  "version": "1.0.0",
-  "description": "A Hello World NPM package",
+  "version": "0.0.1",
+  "description": "This package enables you to perform prefix searches with exceptional speed.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
