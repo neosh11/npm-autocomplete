@@ -56,6 +56,7 @@ To search for words with a given prefix, use the `findWords` method:
 ```ts
 const results = autoCompleteSearch.findWords('exa', 5);
 ```
+This searches for words with the prefix "exa" and returns up to 5 associated IDs in an array.
 
 By default, the maximum number of ids returned is 100
-This searches for words with the prefix "exa" and returns up to 5 associated IDs in an array.
+
