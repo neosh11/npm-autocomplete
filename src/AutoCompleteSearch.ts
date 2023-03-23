@@ -78,8 +78,8 @@ export class AutoCompleteSearch {
   private collectWords(
     node: SearchNode,
     ids: Set<string>,
-    prefix: string = '',
-    maxCount: number = 1000,
+    prefix = '',
+    maxCount = 1000,
     count: Counter = { value: 0 },
   ) {
     if (node.isEndOfWord) {
