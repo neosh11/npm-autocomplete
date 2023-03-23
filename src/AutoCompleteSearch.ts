@@ -79,7 +79,7 @@ export class AutoCompleteSearch {
     node: SearchNode,
     ids: Set<string>,
     prefix: string = '',
-    maxCount: number = 100,
+    maxCount: number = 1000,
     count: Counter = { value: 0 },
   ) {
     if (node.isEndOfWord) {
@@ -100,7 +100,7 @@ export class AutoCompleteSearch {
 
     if (count.value < maxCount) {
       for (const [char, child] of node.children) {
-        this.collectWords(child, ids, prefix + char);
+        this.collectWords(child, ids, prefix + char, maxCount, count);
         if (count.value === maxCount) {
           return;
         }

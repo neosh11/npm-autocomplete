@@ -54,7 +54,7 @@ test('Test insert and big fat find', () => {
   const arr: { id: string; word: string }[] = [];
 
   //    do a for loop and create 1000 words and ids between 1 and 10
-  for (let i = 0; i < 1000; i++) {
+  for (let i = 0; i < 2000; i++) {
     const word = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
     const id = Math.floor(Math.random() * 10) + 1;
 
@@ -63,14 +63,29 @@ test('Test insert and big fat find', () => {
   }
 
   // find words that start with 'A'
-  const words1 = search.findWords('A').sort();
+  var start = new Date().getTime();
+  const words1 = search.findWords('Aa').sort();
+  var end = new Date().getTime();
+  var time = end - start;
+  console.log('Execution time: ' + time);
 
   // find words that start with 'A' or 'a' in arr
+  var start = new Date().getTime();
+
   const words2 = arr
-    .filter((item) => item.word.startsWith('A') || item.word.startsWith('a'))
+    .filter(
+      (item) =>
+        item.word.startsWith('Aa') ||
+        item.word.startsWith('aa') ||
+        item.word.startsWith('aA') ||
+        item.word.startsWith('aA'),
+    )
     .map((item) => item.id)
     .filter((item, index, self) => self.indexOf(item) === index)
     .sort();
+  var end = new Date().getTime();
+  var time = end - start;
+  console.log('Execution time: ' + time);
 
   expect(words1).toEqual(words2);
 });
@@ -140,6 +155,67 @@ test('String2ObjectAutoCompleteSearch', () => {
   expect(words3).toEqual([{ name: 'Pops', id: '3' }]);
   expect(words4.length).toEqual(5);
   expect(words5.length).toEqual(3);
+
+  // clear the search
+  search.clear();
+  // expect the words to be an empty array
+  expect(search.findObjects('jo')).toEqual([]);
+});
+
+test('max count test', () => {
+  // create a new instance of the AutoCompleteSearch class
+  const search = new String2ObjectAutoCompleteSearch({
+    ignoreCase: true,
+    objectIdProperty: 'id',
+    tokenizer: ' ',
+  });
+
+  const users = [
+    {
+      name: 'John Doe',
+      id: '1',
+    },
+    {
+      name: 'John Doe',
+      id: '2',
+    },
+    {
+      name: 'John Doe',
+      id: '3',
+    },
+    {
+      name: 'John Doe',
+      id: '4',
+    },
+    {
+      name: 'John Doe',
+      id: '5',
+    },
+    {
+      name: 'John Doe',
+      id: '6',
+    },
+    {
+      name: 'John Doe',
+      id: '7',
+    },
+    {
+      name: 'John Doe',
+      id: '8',
+    },
+    {
+      name: 'John Doe',
+      id: '9',
+    },
+  ];
+
+  for (const user of users) {
+    search.insert(user.name, user);
+  }
+
+  const words = search.findObjects('J', 5);
+
+  expect(words.length).toEqual(5);
 
   // clear the search
   search.clear();
