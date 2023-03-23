@@ -1,11 +1,16 @@
 # npm-autocomplete
 
 <p>
-<img src="https://img.shields.io/bundlephobia/min/@neosh11/autocomplete-search/0.0.6"/>
-<img src="https://img.shields.io/npm/v/@neosh11/autocomplete-search"/>
-
+<img src="https://img.shields.io/pypi/wheel/pip?color=green&label=es6"/>
 <img src="https://img.shields.io/pypi/wheel/pip?color=green&label=React"/>
 <img src="https://img.shields.io/pypi/wheel/pip?color=green&label=React-Native"/>
+
+<img src="https://img.shields.io/bundlephobia/min/@neosh11/autocomplete-search/0.0.6"/>
+<img src="https://img.shields.io/bundlephobia/minzip/@neosh11/autocomplete-search"/>
+
+<img src="https://img.shields.io/npm/v/@neosh11/autocomplete-search"/>
+
+
 
 <img src="https://img.shields.io/twitter/follow/IGrowNeo?style=social"/>
 
