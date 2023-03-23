@@ -1,5 +1,17 @@
 # npm-autocomplete
 
+<p>
+<img src="https://img.shields.io/bundlephobia/min/@neosh11/autocomplete-search/0.0.6"/>
+<img src="https://img.shields.io/npm/v/@neosh11/autocomplete-search"/>
+
+<img src="https://img.shields.io/pypi/wheel/pip?color=green&label=React"/>
+<img src="https://img.shields.io/pypi/wheel/pip?color=green&label=React-Native"/>
+
+<img src="https://img.shields.io/twitter/follow/IGrowNeo?style=social"/>
+
+</p>
+
+
 ## Overview
 
 This TypeScript module provides a simple implementation of an auto-complete search using a trie data structure. It supports searching for words with a given prefix and inserting words with associated IDs into the trie. The module also provides an option for case-insensitive search
