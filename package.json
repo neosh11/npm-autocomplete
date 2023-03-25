@@ -1,6 +1,6 @@
 {
   "name": "@neosh11/autocomplete-search",
-  "version": "0.0.8",
+  "version": "1.0.0",
   "description": "This package enables you to perform prefix searches with exceptional speed.",
   "main": "./dist/bundle.cjs.js",
   "module": "./dist/bundle.esm.js",

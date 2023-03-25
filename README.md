@@ -5,17 +5,14 @@
 <img src="https://img.shields.io/pypi/wheel/pip?color=green&label=React"/>
 <img src="https://img.shields.io/pypi/wheel/pip?color=green&label=React-Native"/>
 
-<img src="https://img.shields.io/bundlephobia/min/@neosh11/autocomplete-search/0.0.7"/>
-<img src="https://img.shields.io/bundlephobia/minzip/@neosh11/autocomplete-search"/>
+<img src="https://img.shields.io/bundlephobia/min/@neosh11/autocomplete-search/1.0.0"/>
+<img src="https://img.shields.io/bundlephobia/minzip/@neosh11/autocomplete-search/1.0.0"/>
 
 <img src="https://img.shields.io/npm/v/@neosh11/autocomplete-search"/>
-
-
 
 <img src="https://img.shields.io/twitter/follow/IGrowNeo?style=social"/>
 
 </p>
-
 
 ## Overview
 
@@ -28,18 +25,16 @@ This TypeScript module provides a simple implementation of an auto-complete sear
 | `insert(word: string, id: string)`             | `O(m)`, where m is the length of the word being inserted.                 |
 | `findWords(prefix: string, maxCount?: number)` | `O(k + n)`, where n is the number of nodes, k is the lenght of the prefix |
 
-
 ## Why use this and not a simple filter?
 
 We tested out a simple filter on 100,000 tokens on the browser and these were the results:
 
-| Method                                       | Time  (ms)                                                                    |
-| ---------------------------------------------- | ------------------------------------------------------------------------- |
-| Simple filter            | 467              |
-| autoCompleteSearch | 4 |
+| Method             | Time (ms) |
+| ------------------ | --------- |
+| Simple filter      | 467       |
+| autoCompleteSearch | 4         |
 
 If you want your results to instantly load as you're typing with a lot of data, this library will be a life saver!
-
 
 ## Usage
 
