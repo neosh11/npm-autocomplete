@@ -14,8 +14,9 @@
 
 </p>
 
-## Overview
+*This project has been used as an introduction to algorithms in JS tutorial*
 
+## Overview
 ### If you use react -> here is another package built on this that can handle everything for you => [Link](https://www.npmjs.com/package/autocomplete-search-react)
 
 This TypeScript module provides a simple implementation of an auto-complete search using a trie data structure. It supports searching for words with a given prefix and inserting words with associated IDs into the trie. The module also provides an option for case-insensitive search
